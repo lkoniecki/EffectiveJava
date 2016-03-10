@@ -25,4 +25,12 @@ Right click on the project->Configure->Convert to Maven project
 
 ### IntelliJ
 
-Check out from Version Control->Git 
+Check out from Version Control->Git
+
+## Survey
+
+I'm looking forward to know your opinion about the workshop and problems that it covers.
+
+If possible please take 1-2 minutes to fill in a survey about your reception of the workshop.
+
+Thanks in advance!
