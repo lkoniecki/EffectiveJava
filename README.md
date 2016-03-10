@@ -31,6 +31,8 @@ Check out from Version Control->Git
 
 I'm looking forward to know your opinion about the workshop and problems that it covers.
 
-If possible please take 1-2 minutes to fill in a survey about your reception of the workshop.
+If possible please take 1-2 minutes to fill in a survey about your reception of the workshop:
+
+[http://goo.gl/forms/wrqCvBJ7VN]
 
 Thanks in advance!
