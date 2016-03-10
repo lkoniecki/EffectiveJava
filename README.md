@@ -33,6 +33,6 @@ I'm looking forward to know your opinion about the workshop and problems that it
 
 If possible please take 1-2 minutes to fill in a survey about your reception of the workshop:
 
-[http://goo.gl/forms/wrqCvBJ7VN]
+http://goo.gl/forms/wrqCvBJ7VN
 
 Thanks in advance!
