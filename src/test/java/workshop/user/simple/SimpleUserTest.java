@@ -1,10 +1,11 @@
 package workshop.user.simple;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import workshop.user.common.Gender;
-import workshop.user.simple.SimpleUser;
 
 public class SimpleUserTest {
 	private SimpleUser user;
@@ -18,11 +19,29 @@ public class SimpleUserTest {
 		user.setPhoneNumber("48502112332");
 		user.setStreetAddress("Pomorska 80");
 		user.setCity("Gdańsk");
+		user.validate();
 	}
 
 	@Test
 	public void createUserTest() {
-		user.validate();
+	}
+
+	@Test
+	public void createUserMultiArgConstructor() {
+
+		String expectedFirstName = "Jan";
+		String expectedLastName = "Kowalski";
+		Gender expectedGender = Gender.MALE;
+		String expectedStreet = "Pomorska 80";
+		String expectedCity = "Gdańsk";
+		user = new SimpleUser(expectedFirstName, expectedLastName, expectedGender,
+				expectedStreet, expectedCity);
+
+		assertEquals(expectedFirstName, user.getFirstName());
+		assertEquals(expectedLastName, user.getLastName());
+		assertEquals(expectedGender, user.getGender());
+		assertEquals(expectedStreet, user.getStreetAddress());
+		assertEquals(expectedCity, user.getCity());
 	}
 
 	@Test(expected = IllegalArgumentException.class)

@@ -12,12 +12,12 @@ import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
-public class Excercise1Test {
-	private Excercise1 ex;
+public class Exercise1Test {
+	private Exercise1 ex;
 
 	@Before
 	public void setUp() {
-		ex = new Excercise1();
+		ex = new Exercise1();
 	}
 
 	@Test(expected=IllegalArgumentException.class)

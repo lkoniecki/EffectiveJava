@@ -11,25 +11,25 @@ import org.junit.Test;
 
 import com.google.common.collect.Sets;
 
-public class Excercise2Test {
+public class Exercise2Test {
 	@Test
 	public void testNullSet() {
 		try {
-			Excercise2.union(null, Sets.newHashSet());
+			Exercise2.union(null, Sets.newHashSet());
 			fail("IllegalArgumentException should be returned");
 		} catch (IllegalArgumentException e) {
 			//should fail
 		}
 
 		try {
-			Excercise2.union(Sets.newHashSet(), null);
+			Exercise2.union(Sets.newHashSet(), null);
 			fail("IllegalArgumentException should be returned");
 		} catch (IllegalArgumentException e) {
 			//should fail
 		}
 
 		try {
-			Excercise2.union(null, null);
+			Exercise2.union(null, null);
 			fail("IllegalArgumentException should be returned");
 		} catch (IllegalArgumentException e) {
 			//should fail
@@ -40,7 +40,7 @@ public class Excercise2Test {
 	public void testBothEmptySet() {
 		Set<Integer> set1 = new HashSet<>();
 		Set<Integer> set2 = new HashSet<>();
-		assertTrue(Excercise2.union(set1, set2).isEmpty());
+		assertTrue(Exercise2.union(set1, set2).isEmpty());
 	}
 
 	@Test
@@ -48,14 +48,14 @@ public class Excercise2Test {
 		Set<Integer> set1 = new HashSet<>();
 		Set<Integer> set2 = Sets.newHashSet(1, 2, 3);
 		Set<Integer> expectedResult = Sets.union(set1, set2);
-		Set<Integer> result = Excercise2.union(set1, set2);
+		Set<Integer> result = Exercise2.union(set1, set2);
 		assertEquals("Wrong set size", expectedResult.size(), result.size());
 		assertTrue(Sets.difference(expectedResult, result).isEmpty());
 
 		set1 = Sets.newHashSet(1, 2, 3);
 		set2 = new HashSet<>();
 		expectedResult = Sets.union(set1, set2);
-		result = Excercise2.union(set1, set2);
+		result = Exercise2.union(set1, set2);
 		assertEquals("Wrong set size", expectedResult.size(), result.size());
 		assertTrue(Sets.difference(expectedResult, result).isEmpty());
 	}
@@ -65,7 +65,7 @@ public class Excercise2Test {
 		Set<Integer> set1 = Sets.newHashSet(1, 2, 3, 8, 9);
 		Set<Integer> set2 = Sets.newHashSet(3, 4, 5, 6);
 		Set<Integer> expectedResult = Sets.union(set1, set2);
-		Set<Integer> result = Excercise2.union(set1, set2);
+		Set<Integer> result = Exercise2.union(set1, set2);
 		assertEquals("Wrong set size", expectedResult.size(), result.size());
 		assertTrue(Sets.difference(expectedResult, result).isEmpty());
 	}
@@ -75,7 +75,7 @@ public class Excercise2Test {
 		Set<Integer> set1 = Sets.newHashSet(1, 2, 3);
 		Set<Integer> set2 = Sets.newHashSet(1, 2, 3);
 		Set<Integer> expectedResult = Sets.union(set1, set2);
-		Set<Integer> result = Excercise2.union(set1, set2);
+		Set<Integer> result = Exercise2.union(set1, set2);
 		assertEquals("Wrong set size", expectedResult.size(), result.size());
 		assertTrue(Sets.difference(expectedResult, result).isEmpty());
 	}
