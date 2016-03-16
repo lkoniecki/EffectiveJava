@@ -6,7 +6,7 @@ import workshop.user.common.Gender;
 import workshop.user.common.Optional;
 
 public class User {
-	private long id;
+	private final long id;
 	private String firstName;
 	@Optional
 	private String middleName;
@@ -18,6 +18,7 @@ public class User {
 	private String city;
 
 	private User() {
+		id = generateId();
 	}
 
 	public long getId() {
@@ -67,6 +68,11 @@ public class User {
 		b.append(" ");
 		b.append(streetAddress);
 		return b.toString();
+	}
+
+	private long generateId() {
+		//FIXME generate unique id
+		return -1;
 	}
 
 	public static class Builder {
@@ -135,14 +141,8 @@ public class User {
 			}
 		}
 
-		private long generateId() {
-			//FIXME generate unique id
-			return -1;
-		}
-
 		public User build() {
 			User user = new User();
-			user.id = generateId();
 			user.firstName = this.firstName;
 			user.middleName = this.middleName;
 			user.lastName = this.lastName;

@@ -6,7 +6,7 @@ import workshop.user.common.Gender;
 import workshop.user.common.Optional;
 
 public class SimpleUser {
-	private long id;
+	private final long id;
 	private String firstName;
 	@Optional
 	private String middleName;
