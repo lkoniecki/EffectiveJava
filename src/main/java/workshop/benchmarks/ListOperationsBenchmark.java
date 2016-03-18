@@ -1,7 +1,6 @@
 package workshop.benchmarks;
 
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ForkJoinPool;
 
 import org.openjdk.jmh.annotations.Benchmark;
 
@@ -29,7 +28,6 @@ public class ListOperationsBenchmark extends AbstractBenchmark {
 
 	@Benchmark
 	public int list_max_stream_parallel_4() throws InterruptedException, ExecutionException {
-		ForkJoinPool pool = new ForkJoinPool(4);
-		return pool.submit(() -> intList.stream().parallel().max(Integer::compare)).get().get();
+		return pool.submit(() -> intList.stream().parallel().max(Integer::compare).get()).get();
 	}
 }

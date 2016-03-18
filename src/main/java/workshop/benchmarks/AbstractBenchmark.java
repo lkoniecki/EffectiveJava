@@ -2,6 +2,7 @@ package workshop.benchmarks;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -22,32 +23,37 @@ import org.openjdk.jmh.annotations.Warmup;
 public abstract class AbstractBenchmark {
 	private static final int NUMBER_OF_ELEMENTS = 900_000;
 	private static final int NUMBER_OF_RANDOM_ELEMENTS = 450_000;
-	
-	public final ArrayList<Integer> intList;
-	
+
+	protected final ArrayList<Integer> intList;
+
+	protected final ForkJoinPool pool = new ForkJoinPool(4);
+
 	public AbstractBenchmark() {
 		intList = copyIntArray(createIntArray());
 	}
-	
+
 	private static int[] createIntArray() {
 		return createRandomIntArray(NUMBER_OF_ELEMENTS, NUMBER_OF_RANDOM_ELEMENTS);
 	}
-	
+
 	private static int[] createRandomIntArray(int numberOfElements, int numberOfRandomElements) {
 		Random random = new Random();
 		int[] array = new int[numberOfElements];
-		for (int i = 0; i < numberOfElements; i++)
-			if (i < numberOfRandomElements)
+		for (int i = 0; i < numberOfElements; i++) {
+			if (i < numberOfRandomElements) {
 				array[i] = random.nextInt();
-			else
+			} else {
 				array[i] = array[i % numberOfRandomElements];
+			}
+		}
 		return array;
 	}
 
 	private static ArrayList<Integer> copyIntArray(int[] array) {
 		ArrayList<Integer> list = new ArrayList<>(array.length);
-		for (int i = 0; i < array.length; i++)
-			list.add(array[i]);
+		for (int element : array) {
+			list.add(element);
+		}
 		return list;
 	}
 }
