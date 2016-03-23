@@ -3,12 +3,11 @@ package workshop.generics;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.google.common.collect.Lists;
 
 public class DummyStackTest {
 	//object to be tested. Object is recreated before each test run.
@@ -22,10 +21,10 @@ public class DummyStackTest {
 	@Test
 	public void testAddAll() {
 		//add integers
-		Collection<Integer> intList = Lists.newArrayList(1, 2, 3);
+		Collection<Integer> intList = Arrays.asList(1, 2, 3);
 		stack.pushAll(intList);
 		//and numbers
-		Collection<Number> numList = Lists.newArrayList(4, 5, 6);
+		Collection<Number> numList = Arrays.asList(4, 5, 6);
 		stack.pushAll(numList);
 
 		//now check if result is correct
@@ -47,7 +46,7 @@ public class DummyStackTest {
 	@Test
 	public void testPopAll() {
 		//add collection of integers
-		Collection<Integer> intList = Lists.newArrayList(1, 2, 3);
+		Collection<Integer> intList = Arrays.asList(1, 2, 3);
 		stack.pushAll(intList);
 
 		//but collect result to a collection of numbers

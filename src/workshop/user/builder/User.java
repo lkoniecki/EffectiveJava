@@ -1,7 +1,5 @@
 package workshop.user.builder;
 
-import com.google.common.base.Strings;
-
 import workshop.user.common.Gender;
 import workshop.user.common.Optional;
 
@@ -120,11 +118,11 @@ public class User {
 		}
 
 		private void validate(User user) {
-			if (Strings.isNullOrEmpty(user.firstName)) {
+			if (isNullOrEmpty(user.firstName)) {
 				throw new IllegalArgumentException("First name can not be empty");
 			}
 
-			if (Strings.isNullOrEmpty(user.lastName)) {
+			if (isNullOrEmpty(user.lastName)) {
 				throw new IllegalArgumentException("Last name can not be empty");
 			}
 
@@ -132,11 +130,11 @@ public class User {
 				throw new IllegalArgumentException("Gender can not be null");
 			}
 
-			if (Strings.isNullOrEmpty(user.city)) {
+			if (isNullOrEmpty(user.city)) {
 				throw new IllegalArgumentException("City can not be empty");
 			}
 
-			if (Strings.isNullOrEmpty(user.streetAddress)) {
+			if (isNullOrEmpty(user.streetAddress)) {
 				throw new IllegalArgumentException("Street address can not be empty");
 			}
 		}
@@ -152,6 +150,14 @@ public class User {
 			user.city = this.city;
 			validate(user);
 			return user;
+		}
+
+		private boolean isNullOrEmpty(String string) {
+			if (string == null || string.isEmpty()) {
+				return true;
+			}
+
+			return false;
 		}
 	}
 }

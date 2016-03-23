@@ -5,11 +5,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 import org.junit.Test;
-
-import com.google.common.collect.Lists;
 
 public class Exercise1Test {
 
@@ -26,7 +25,7 @@ public class Exercise1Test {
 
 	@Test
 	public void testSimpleList() {
-		Map<String, Long> result = Exercise1.groupBy(Lists.newArrayList("A", "B", "C", "D"));
+		Map<String, Long> result = Exercise1.groupBy(Arrays.asList("A", "B", "C", "D"));
 		validateNoElements(result, 1, "A");
 		validateNoElements(result, 1, "B");
 		validateNoElements(result, 1, "C");
@@ -35,7 +34,8 @@ public class Exercise1Test {
 
 	@Test
 	public void testMultipleElements() {
-		Map<String, Long> result = Exercise1.groupBy(Lists.newArrayList("Z", "A", "B", "A", "A", "Z", "D", "C", "D"));
+		Map<String, Long> result =
+				Exercise1.groupBy(Arrays.asList("Z", "A", "B", "A", "A", "Z", "D", "C", "D"));
 		validateNoElements(result, 3, "A");
 		validateNoElements(result, 1, "B");
 		validateNoElements(result, 1, "C");

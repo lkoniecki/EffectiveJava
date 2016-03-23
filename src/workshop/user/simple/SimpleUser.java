@@ -1,7 +1,5 @@
 package workshop.user.simple;
 
-import com.google.common.base.Strings;
-
 import workshop.user.common.Gender;
 import workshop.user.common.Optional;
 
@@ -96,11 +94,11 @@ public class SimpleUser {
 	}
 
 	public void validate() {
-		if (Strings.isNullOrEmpty(firstName)) {
+		if (isNullOrEmpty(firstName)) {
 			throw new IllegalArgumentException("First name can not be empty");
 		}
 
-		if (Strings.isNullOrEmpty(lastName)) {
+		if (isNullOrEmpty(lastName)) {
 			throw new IllegalArgumentException("Last name can not be empty");
 		}
 
@@ -108,11 +106,11 @@ public class SimpleUser {
 			throw new IllegalArgumentException("Gender can not be null");
 		}
 
-		if (Strings.isNullOrEmpty(city)) {
+		if (isNullOrEmpty(city)) {
 			throw new IllegalArgumentException("City can not be empty");
 		}
 
-		if (Strings.isNullOrEmpty(streetAddress)) {
+		if (isNullOrEmpty(streetAddress)) {
 			throw new IllegalArgumentException("Street address can not be empty");
 		}
 	}
@@ -137,5 +135,13 @@ public class SimpleUser {
 	private long generateId() {
 		//FIXME generate unique id
 		return -1;
+	}
+
+	private boolean isNullOrEmpty(String string) {
+		if (string == null || string.isEmpty()) {
+			return true;
+		}
+
+		return false;
 	}
 }
