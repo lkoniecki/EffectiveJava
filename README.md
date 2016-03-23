@@ -20,8 +20,7 @@ What tools are required:
 * Clone EffectiveJava repository to the workspace,
 * Create new Java project with EffectiveJava name
 * If you have any problems with unit tests compilation (e.g. Eclipse claims that import of org.junit.Assert.* can not be resolved) you should:
-	* Goto project properties
-  > Properties -> Java Build Path
+  * Goto project properties: **Properties** -> **Java Build Path**
   * On the **Libraries** tab click **"Add Library..."** button,
   * Choose **JUnit** and **Apply** changes,
   * Imports should be properly resolved now
