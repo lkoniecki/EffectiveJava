@@ -1,4 +1,4 @@
-# **Effective programming in Java** workshop
+# "Effective programming in Java" workshop
 
 What tools are required:
 * any IDE with Java support (Eclipse Mars/IntelliJ IDEA are prefered),
@@ -11,14 +11,20 @@ What tools are required:
 * Create new workspace,
 * Configure Eclipse to use JDK 1.8,
 
-Window->Preferences->Java->Installed JRE
+> Window->Preferences->Java->Installed JRE
 
 * Set JDK Compliance level to 1.8,
 
-Window->Preferences->Java->Compiler->1.8
+> Window->Preferences->Java->Compiler->1.8
 
 * Clone EffectiveJava repository to the workspace,
 * Create new Java project with EffectiveJava name
+* If you have any problems with unit tests compilation (e.g. Eclipse claims that import of org.junit.Assert.* can not be resolved) you should:
+	* Goto project properties
+  > Properties -> Java Build Path
+  * On the **Libraries** tab click **"Add Library..."** button,
+  * Choose **JUnit** and **Apply** changes,
+  * Imports should be properly resolved now
 
 ### IntelliJ
 
