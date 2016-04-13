@@ -83,12 +83,14 @@ public class Exercise2Test {
 	/*
 	@Test
 	public void testTwoDifferentTypes() {
-		Set<Integer> set1 = Sets.newHashSet(1, 2, 3);
-		Set<Number> set2 = Sets.newHashSet(3, 4, 5);
-		Set<Number> expectedResult = Sets.union(set1, set2);
+		Set<Integer> set1 = new HashSet<>(Arrays.asList(1,2,3));
+		Set<Number> set2 = new HashSet<>(Arrays.asList(1,2,3));
+
+		Set<Number> expectedResult = new HashSet<>(set1);
+		expectedResult.addAll(set2);
 		Set<Number> result = Exercise2.union(set1, set2);
 		assertEquals("Wrong set size", expectedResult.size(), result.size());
-		assertTrue(Sets.difference(expectedResult, result).isEmpty());
+		assertTrue(expectedResult.equals(result));
 	}
 	*/
 }
