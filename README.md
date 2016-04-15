@@ -38,3 +38,4 @@ If possible please take 1-2 minutes to fill in a survey about your reception of 
 http://goo.gl/forms/wrqCvBJ7VN
 
 Thanks in advance!
+[![analytics](https://www.google-analytics.com/collect?v=1&t=pageview&_s=1&dl=https%3A%2F%2Fgithub.com%2Flkoniecki&dp=%2FEffectiveJava&dt=EffectiveJava&_u=lkoniecki&cid=github.com%2Flkoniecki&tid=UA-62127955-3&aip=1)]()
